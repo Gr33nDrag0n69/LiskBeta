@@ -13,7 +13,7 @@ Misc. stuff related to lisk-core beta network.
   - [Install/Update Notes](#installupdate-notes)
   - [PM2 Notes](#pm2-notes)
   - [Nginx & SSL Notes](#nginx--ssl-notes)
-    - [API Notes](#api-notes)
+  - [API Notes](#api-notes)
 
 ## Disclaimer
 
@@ -119,6 +119,6 @@ TODO
 
 TODO
 
-### API Notes
+## API Notes
 
 TODO
