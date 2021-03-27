@@ -5,6 +5,7 @@ Misc. stuff related to lisk-core beta network.
   - [Disclaimer](#disclaimer)
   - [Links](#links)
     - [Documentation](#documentation)
+    - [Faucet](#faucet)
     - [Explorer](#explorer)
     - [Guides](#guides)
     - [Public API](#public-api)
@@ -17,18 +18,24 @@ Misc. stuff related to lisk-core beta network.
 
 Valid for Lisk Betanet ONLY!
 
-Thanks to all peoples in lisk chat network.
-In particular to Punkrock & Lemii for their useful notes and Korben3 & Moosty for their blockcahin explorers.
+**For most questions, take the time to read official Lisk-Core & Lisk-SDK documentation! [Links below](#documentation)**
+
 This page is not intended to be a dummy proof guide, more a sanitized version of my personnal notes created by reading others guides and official documentation.
-If anything, take the time to read official documentation before these notes!
+
+Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii for their useful notes and Korben3 & Moosty for their blockcahin explorers.
 
 ## Links
 
 ### Documentation
 
 * [Lisk.io - Lisk-Core Documentation](https://lisk.io/documentation/lisk-core/v3/index.html)
-* [Lisk.io - Lisk-Core CLI](https://lisk.io/documentation/lisk-core/v3/reference/cli.html)
-* [Lisk.io - Lisk-Core API](https://lisk.io/documentation/lisk-core/v3/reference/api.html)
+  * [Lisk-Core CLI](https://lisk.io/documentation/lisk-core/v3/reference/cli.html)
+  * [Lisk-Core API](https://lisk.io/documentation/lisk-core/v3/reference/api.html)
+* [Lisk.io - Lisk-SDK Documentation](https://lisk.io/documentation/lisk-sdk/)
+
+### Faucet
+
+* [Lisk.io - BetaNet 5 Faucet](https://betanet5-faucet.lisk.io/)
 
 ### Explorer
 
@@ -52,7 +59,55 @@ If anything, take the time to read official documentation before these notes!
 
 ## Install/Update Notes
 
-TODO
+```
+# Install Base
+
+sudo apt-get -y install wget tar zip unzip ufw htop npm git curl bash jq nodejs npm
+
+# Install Lisk
+
+curl https://downloads.lisk.io/lisk/betanet/3.0.0-beta.5/lisk-core-v3.0.0-beta.5-linux-x64.tar.gz -o lisk-core.tar.gz
+tar -xf ./lisk-core.tar.gz
+rm -f ./lisk-core.tar.gz
+echo 'export PATH="$PATH:$HOME/lisk-core/bin"' >> ~/.bashrc
+source ~/.bashrc
+
+# Create your account
+
+lisk-core account:create
+
+# Copy/save account output (Refered as ##Account-XXX## for the rest of these notes.)
+
+# Fund the account
+
+https://betanet5-faucet.lisk.io/
+
+Or ask Shuse2 at Lisk's Discord using binaryAddress.
+
+# Create a random 12-word passphrase
+
+lisk-core account:create
+
+# Save only the passphrase value. (Refered as ##EncryptionPassword## for the rest of these notes.)
+
+lisk-core passphrase:encrypt
+
+Please enter your secret passphrase:    ##Account-passphrase##
+Please re-enter your secret passphrase: ##Account-passphrase##
+Please enter your password:             ##EncryptionPassword## 
+Please re-enter your password:          ##EncryptionPassword##
+
+# Save Command Output. (Refered as ##EncryptedPassphrase## for the rest of these notes.)
+
+# Generate Hash onion
+
+lisk-core hash-onion -o ~/hash_onion.json
+
+
+INCOMPLETED! (TODO)
+
+
+```
 
 
 ## PM2 Notes
