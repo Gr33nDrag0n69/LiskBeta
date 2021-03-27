@@ -8,11 +8,12 @@ Misc. stuff related to lisk-core beta network.
     - [Faucet](#faucet)
     - [Explorer](#explorer)
     - [Guides](#guides)
-    - [Public API](#public-api)
+    - [Public API Endpoints](#public-api-endpoints)
   - [Tools](#tools)
   - [Install/Update Notes](#installupdate-notes)
   - [PM2 Notes](#pm2-notes)
   - [Nginx & SSL Notes](#nginx--ssl-notes)
+    - [API Notes](#api-notes)
 
 ## Disclaimer
 
@@ -48,7 +49,7 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 * [Lemii - Securing a Lisk Node with Nginx and Certbot](https://github.com/Lemii/guides/blob/master/securing-a-lisk-node-with-nginx-and-certbot.md)
 * [Lemii - Managing the Lisk Core process with PM2](https://github.com/Lemii/guides/blob/master/managing-the-lisk-core-process-with-pm2.md)
 
-### Public API
+### Public API Endpoints
 
 * [Lemii - lisktools.eu](https://betanet5-api.lisktools.eu/)
 
@@ -118,3 +119,6 @@ TODO
 
 TODO
 
+### API Notes
+
+TODO
