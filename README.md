@@ -1,7 +1,17 @@
 # LiskBeta
 Misc. stuff related to lisk-core beta network.
 
-[[TOC]]
+- [LiskBeta](#liskbeta)
+  - [Disclaimer](#disclaimer)
+  - [Links](#links)
+    - [Documentation](#documentation)
+    - [Explorer](#explorer)
+    - [Guides](#guides)
+    - [Public API](#public-api)
+  - [Tools](#tools)
+  - [Install/Update Notes](#installupdate-notes)
+  - [PM2 Notes](#pm2-notes)
+  - [Nginx & SSL Notes](#nginx--ssl-notes)
 
 ## Disclaimer
 
