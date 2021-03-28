@@ -9,8 +9,8 @@ Misc. stuff related to lisk-core beta network.
   - [Public API Endpoints](#public-api-endpoints)
   - [Tools](#tools)
 - [Install Lisk-Core 3 Beta 5 on Ubuntu](#install-lisk-core-3-beta-5-on-ubuntu)
-  - [Configure UFW firewall](#configure-ufw-firewall)
   - [Install Base](#install-base)
+  - [Configure UFW firewall](#configure-ufw-firewall)
   - [Install Lisk-Core Using Binary Method](#install-lisk-core-using-binary-method)
   - [Create your account](#create-your-account)
   - [Fund the account](#fund-the-account)
@@ -67,14 +67,42 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 
 # Install Lisk-Core 3 Beta 5 on Ubuntu
 
-## Configure UFW firewall
-
-TODO
-
 ## Install Base
 
 ```shell
 sudo apt-get -y install wget tar zip unzip ufw htop npm git curl bash jq nodejs npm
+```
+
+## Configure UFW firewall
+
+**Important:** To not get locked out of your server, make sure your management IP is static to use 'Allow From' command. If you are not sure of what to do, don't use 'Allow From' and just open port 22 (SSH) with `sudo ufw allow '22/tcp'`.
+
+```shell
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Static Management IP
+sudo ufw allow from "100.150.200.250/32"
+
+# DNS
+sudo ufw allow "53/udp"
+
+# NTP (Optional)
+sudo ufw allow "123/udp"
+
+# Mail Server (Optional)
+sudo ufw allow "25/tcp"
+
+# Nginx (Lisk-Core API, Optional)
+sudo ufw allow "80/tcp"
+sudo ufw allow "443/tcp"
+
+# Lisk-Core
+sudo ufw allow "5000/tcp"
+sudo ufw allow "5001/tcp"
+
+sudo ufw --force enable
+sudo ufw status
 ```
 
 ## Install Lisk-Core Using Binary Method
