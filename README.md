@@ -12,9 +12,9 @@ Misc. stuff related to lisk-core beta network.
   - [Tools](#tools)
   - [Install Lisk-Core 3 Beta 5](#install-lisk-core-3-beta-5)
     - [Install Base](#install-base)
-- [Install Lisk](#install-lisk)
-- [Create your account](#create-your-account)
-- [Copy/save account output (Refered as ##Account-XXX## for the rest of these notes.)](#copysave-account-output-refered-as-account-xxx-for-the-rest-of-these-notes)
+    - [Install Lisk-Core Using Binary Method](#install-lisk-core-using-binary-method)
+    - [Create your account](#create-your-account)
+    - [Copy/save account output](#copysave-account-output)
 - [Fund the account](#fund-the-account)
 - [Create a random 12-word passphrase](#create-a-random-12-word-passphrase)
 - [Save only the passphrase value. (Refered as ##EncryptionPassword## for the rest of these notes.)](#save-only-the-passphrase-value-refered-as-encryptionpassword-for-the-rest-of-these-notes)
@@ -76,19 +76,38 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 sudo apt-get -y install wget tar zip unzip ufw htop npm git curl bash jq nodejs npm
 ```
 
-# Install Lisk
+### Install Lisk-Core Using Binary Method
 
+```shell
 curl https://downloads.lisk.io/lisk/betanet/3.0.0-beta.5/lisk-core-v3.0.0-beta.5-linux-x64.tar.gz -o lisk-core.tar.gz
 tar -xf ./lisk-core.tar.gz
 rm -f ./lisk-core.tar.gz
 echo 'export PATH="$PATH:$HOME/lisk-core/bin"' >> ~/.bashrc
 source ~/.bashrc
+```
 
-# Create your account
+### Create your account
 
+```shell
 lisk-core account:create
+```
 
-# Copy/save account output (Refered as ##Account-XXX## for the rest of these notes.)
+### Copy/save account output
+*Refered as ##Account-XXX## for the rest of these notes.*
+
+Example:
+```json
+[
+ {
+  "passphrase": "useless liberty page arctic depend salt smoke chair unhappy art lecture nut",
+  "privateKey": "abe2b8622f33e185c2d9635db8fea1e0c0a1408e7389e34c663a50e73d4121f433267f3bdc32124cf28016707136bcbdc9dc8033a45aefa41974f9071fca306d",
+  "publicKey": "33267f3bdc32124cf28016707136bcbdc9dc8033a45aefa41974f9071fca306d",
+  "binaryAddress": "2cdc32bc5df0d8a62d9808894ed07b4d791d3be5",
+  "address": "lskmt7cm8vhfco6o5o2xvpkhkcs4qjyd7gm3wn7xj"
+ }
+]
+```
+
 
 # Fund the account
 
