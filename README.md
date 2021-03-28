@@ -201,8 +201,10 @@ sudo npm i -g pm2
 
 ### Install PM2 Max Log Size Manager
 
+```shell
 pm2 install pm2-logrotate
 pm2 set pm2-logrotate:max_size 100M
+```
 
 ### Create lisk-core start configuration file for PM2
 
