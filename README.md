@@ -7,7 +7,7 @@ Misc. stuff related to lisk-core beta network.
   - [Explorer](#explorer)
   - [Guides](#guides)
   - [Public API Endpoints](#public-api-endpoints)
-- [Tools](#tools)
+  - [Tools](#tools)
 - [Install Lisk-Core 3 Beta 5 on Ubuntu](#install-lisk-core-3-beta-5-on-ubuntu)
   - [Configure UFW firewall](#configure-ufw-firewall)
   - [Install Base](#install-base)
@@ -61,10 +61,9 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 
 * [Lemii - lisktools.eu](https://betanet5-api.lisktools.eu/)
 
-# Tools
+## Tools
 
-[lisk-forging-enable.sh](./Tools/lisk-forging-enable.sh)
-
+* [Gr33nDrag0n - Enable Delegate Account Forging Bash Script](./Tools/lisk-forging-enable.sh)
 
 # Install Lisk-Core 3 Beta 5 on Ubuntu
 
