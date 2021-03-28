@@ -16,10 +16,13 @@ Misc. stuff related to lisk-core beta network.
   - [Fund the account](#fund-the-account)
   - [Create an 'Encryption Password'](#create-an-encryption-password)
   - [Create the encrypted version of your Account Passphrase](#create-the-encrypted-version-of-your-account-passphrase)
-  - [Generate Hash onion](#generate-hash-onion)
+  - [Generate hash onion](#generate-hash-onion)
+  - [Create custom 'config.json' file](#create-custom-configjson-file)
   - [Install & Configure PM2](#install--configure-pm2)
-  - [Create Lisk-Core PM2 config file](#create-lisk-core-pm2-config-file)
-  - [Install & Configure PM2 LogManager](#install--configure-pm2-logmanager)
+    - [Install NodeJS, NPM & PM2](#install-nodejs-npm--pm2)
+    - [Install PM2 Max Log Size Manager](#install-pm2-max-log-size-manager)
+    - [Create lisk-core start configuration file for PM2](#create-lisk-core-start-configuration-file-for-pm2)
+  - [Create Forging Enable script and make it executable](#create-forging-enable-script-and-make-it-executable)
   - [Nginx & SSL Notes](#nginx--ssl-notes)
   - [API Notes](#api-notes)
 
@@ -177,21 +180,42 @@ Example:
 }
 ```
 
-## Generate Hash onion
+## Generate hash onion
 
 ```shell
 lisk-core hash-onion -o ~/hash_onion.json
 ```
 
+## Create custom 'config.json' file
+
+TODO
+
 ## Install & Configure PM2
 
-TODO
+### Install NodeJS, NPM & PM2
 
-## Create Lisk-Core PM2 config file
+```shell
+sudo apt-get -y install nodejs npm
+sudo npm i -g pm2
+```
 
-## Install & Configure PM2 LogManager
+### Install PM2 Max Log Size Manager
 
-TODO
+pm2 install pm2-logrotate
+pm2 set pm2-logrotate:max_size 100M
+
+### Create lisk-core start configuration file for PM2
+
+```shell
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-core.pm2.json -o ~/lisk-core.pm2.json
+```
+
+## Create Forging Enable script and make it executable
+
+```shell
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-forging-enable.sh -o ~/lisk-forge-enable.sh
+chmod 700 ~/lisk-forging-enable.sh
+```
 
 ## Nginx & SSL Notes
 
