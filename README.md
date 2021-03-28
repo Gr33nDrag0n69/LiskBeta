@@ -72,7 +72,7 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 
 ### Install Base
 
-```bash
+```shell
 sudo apt-get -y install wget tar zip unzip ufw htop npm git curl bash jq nodejs npm
 ```
 
