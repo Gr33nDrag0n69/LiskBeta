@@ -10,7 +10,16 @@ Misc. stuff related to lisk-core beta network.
     - [Guides](#guides)
     - [Public API Endpoints](#public-api-endpoints)
   - [Tools](#tools)
-  - [Install/Update Notes](#installupdate-notes)
+  - [Install Lisk-Core 3 Beta 5](#install-lisk-core-3-beta-5)
+    - [Install Base](#install-base)
+- [Install Lisk](#install-lisk)
+- [Create your account](#create-your-account)
+- [Copy/save account output (Refered as ##Account-XXX## for the rest of these notes.)](#copysave-account-output-refered-as-account-xxx-for-the-rest-of-these-notes)
+- [Fund the account](#fund-the-account)
+- [Create a random 12-word passphrase](#create-a-random-12-word-passphrase)
+- [Save only the passphrase value. (Refered as ##EncryptionPassword## for the rest of these notes.)](#save-only-the-passphrase-value-refered-as-encryptionpassword-for-the-rest-of-these-notes)
+- [Save Command Output. (Refered as ##EncryptedPassphrase## for the rest of these notes.)](#save-command-output-refered-as-encryptedpassphrase-for-the-rest-of-these-notes)
+- [Generate Hash onion](#generate-hash-onion)
   - [PM2 Notes](#pm2-notes)
   - [Nginx & SSL Notes](#nginx--ssl-notes)
   - [API Notes](#api-notes)
@@ -58,12 +67,14 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 [lisk-forging-enable.sh](./Tools/lisk-forging-enable.sh)
 
 
-## Install/Update Notes
+## Install Lisk-Core 3 Beta 5
 
-```
-# Install Base
 
+### Install Base
+
+```bash
 sudo apt-get -y install wget tar zip unzip ufw htop npm git curl bash jq nodejs npm
+```
 
 # Install Lisk
 
