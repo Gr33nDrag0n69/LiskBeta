@@ -19,9 +19,38 @@ EncryptionPassword=$( lisk-core account:create | jq '.[0] | .passphrase' |  tr -
 echo -e "Creating Account Encrypted Passphrase ...\n"
 EncryptedPassphrase=$( lisk-core passphrase:encrypt --password "$EncryptionPassword" --passphrase "$AccountPassphrase" | jq '.encryptedPassphrase' |  tr -d '"' )
 
-echo -e "Generating Hash-Onion File ($Onion_FilePath)...\n"
+echo -e "Writing Hash-Onion to $Onion_FilePath ...\n"
 lisk-core hash-onion -o "$Onion_FilePath"
 
+echo -e "Loading Hash-Onion to Memory ...\n"
+HashOnion=$( cat "$Onion_FilePath" )
+
+echo -e "Writing Config to $Config_FilePath ...\n"
+cat > "$Config_FilePath" << EOF_Config 
+{
+    "logger": {
+        "fileLogLevel": "info"
+    },
+
+    "forging": {
+        "delegates": [
+            {
+                "address":"$AccountBinaryAddress",
+                "encryptedPassphrase":"$EncryptedPassphrase",
+                "hashOnion": $HashOnion
+            }
+        ]
+    },
+
+    "plugins": {
+        "httpApi": {
+            "whiteList": [
+                "127.0.0.1"
+            ]
+        }
+    }
+}
+EOF_Config
 
 echo ""
 echo "========================================================================================================================"
@@ -32,11 +61,8 @@ echo "Public Key           : $AccountPublicKey"
 echo "Binary Address       : $AccountBinaryAddress"
 echo "Address              : $AccountAddress"
 echo "Encryption Password  : $EncryptionPassword"
-echo "Encrypted Passphrase : $EncryptedPassphrase"
 echo ""
 echo "========================================================================================================================"
 echo ""
 echo "IMPORTANT: Save a copy of the previous values to a safe place!"
 echo ""
-
-#lisk-core hash-onion -o "$OnionFilePath"
