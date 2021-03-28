@@ -8,15 +8,14 @@ Misc. stuff related to lisk-core beta network.
   - [Guides](#guides)
   - [Public API Endpoints](#public-api-endpoints)
 - [Tools](#tools)
-- [Install Lisk-Core 3 Beta 5](#install-lisk-core-3-beta-5)
+- [Install Lisk-Core 3 Beta 5 on Ubuntu](#install-lisk-core-3-beta-5-on-ubuntu)
+  - [Configure UFW firewall](#configure-ufw-firewall)
   - [Install Base](#install-base)
   - [Install Lisk-Core Using Binary Method](#install-lisk-core-using-binary-method)
   - [Create your account](#create-your-account)
-  - [Copy/save account output](#copysave-account-output)
   - [Fund the account](#fund-the-account)
-  - [Create 'Encryption Passphrase' using a random 12-word passphrase](#create-encryption-passphrase-using-a-random-12-word-passphrase)
-  - [Save only the passphrase value. (Refered as ##EncryptionPassword## for the rest of these notes.)](#save-only-the-passphrase-value-refered-as-encryptionpassword-for-the-rest-of-these-notes)
-  - [Save Command Output. (Refered as ##EncryptedPassphrase## for the rest of these notes.)](#save-command-output-refered-as-encryptedpassphrase-for-the-rest-of-these-notes)
+  - [Create an 'Encryption Password'](#create-an-encryption-password)
+  - [Create the encrypted version of your Account Passphrase](#create-the-encrypted-version-of-your-account-passphrase)
   - [Generate Hash onion](#generate-hash-onion)
   - [Install & Configure PM2](#install--configure-pm2)
   - [Create Lisk-Core PM2 config file](#create-lisk-core-pm2-config-file)
@@ -67,8 +66,11 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 [lisk-forging-enable.sh](./Tools/lisk-forging-enable.sh)
 
 
-# Install Lisk-Core 3 Beta 5
+# Install Lisk-Core 3 Beta 5 on Ubuntu
 
+## Configure UFW firewall
+
+TODO
 
 ## Install Base
 
@@ -92,8 +94,7 @@ source ~/.bashrc
 lisk-core account:create
 ```
 
-## Copy/save account output
-*Refered as ##Account-XXX## for the rest of these notes.*
+Save the output to a safe place. *Refered as:**##AccountProperty** for the rest of these notes.*
 
 Example:
 ```json
@@ -112,25 +113,42 @@ Example:
 
 https://betanet5-faucet.lisk.io/
 
-Or ask Shuse2 at Lisk's Discord using binaryAddress.
+Or ask Shuse2 at Lisk's Discord using account BinaryAddress.
 
-## Create 'Encryption Passphrase' using a random 12-word passphrase
+## Create an 'Encryption Password'
 
 ```shell
 lisk-core account:create
 ```
 
-## Save only the passphrase value. (Refered as ##EncryptionPassword## for the rest of these notes.)
+Save the dummy account passphrase to a safe place. *Refered as:**##EncryptionPassword##** for the rest of these notes.*
 
+Example:
+```txt
+Encryption Password:
 
+minimum effort act inspire convince student interest borrow loan radar lab depart
+```
+
+## Create the encrypted version of your Account Passphrase
+
+```shell
 lisk-core passphrase:encrypt
 
-Please enter your secret passphrase:    ##Account-passphrase##
-Please re-enter your secret passphrase: ##Account-passphrase##
+Please enter your secret passphrase:    ##AccountPassphrase##
+Please re-enter your secret passphrase: ##AccountPassphrase##
 Please enter your password:             ##EncryptionPassword## 
 Please re-enter your password:          ##EncryptionPassword##
+```
 
-## Save Command Output. (Refered as ##EncryptedPassphrase## for the rest of these notes.)
+Save the json output to a safe place. *Refered as:**##EncryptedAccountPassphrase##** for the rest of these notes.*
+
+Example:
+```json
+{
+    "encryptedPassphrase":"iterations=1000000&cipherText=fc9375fa0bd91efe168c517bdc2fbab79506afe8dddc30253a48641c3e692801cfd049cc13a925439d36635fbcb255880c64975127b9abd65ba10be978d010c6b685b2fd9c11554ec02343&iv=26ebd88e23e999044b0f943b&salt=478843d5df5b6984d07324161d612243&tag=0dfc78bf05ba48774a87790e6a42798b&version=1"
+}
+```
 
 ## Generate Hash onion
 
