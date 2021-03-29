@@ -201,8 +201,7 @@ lisk-start
 
 ## Fund the account
 
-1. Using [Lisk.io Faucet](https://betanet5-faucet.lisk.io/) with 'Account Address'.
-2. Asking Shuse2 in Lisk's Discord using 'Account BinaryAddress'.
+Using [Lisk.io Faucet](https://betanet5-faucet.lisk.io/) with 'Account Address'. (Not 'Account BinaryAddress'!)
 
 ## Wait for funds
 *Edit ##AccountBinaryAddress##*
@@ -259,15 +258,41 @@ chmod 700 ~/lisk-enable-forging.sh
 lisk-forge
 ```
 ## Self-Vote your delegate account
+*Edit ##AccountBinaryAddress##, ##AccountPassphrase## & Vote Amount*
 
-*TODO*
+```txt
+# Check Balance
+
+lisk-core account:get ##AccountBinaryAddress##
+
+"balance":"148900000000" = 1489 LSK
+
+# Vote myself with 1480 LSK (Amount should be multiple of 10 * 10^8.)
+
+lisk-core transaction:create 5 1 100000000
+
+? Please enter: votes(delegateAddress, amount):        ##AccountBinaryAddress##,148000000000
+? Want to enter another votes(delegateAddress, amount) No
+? Please enter passphrase:                             ##AccountPassphrase##
+? Please re-enter passphrase:                          ##AccountPassphrase##
+
+# Save Output
+
+{"transaction":"080...10e"}
+
+# Broadcast Tx
+
+lisk-core transaction:send 080...10e
+
+# Should output
+
+Transaction with id: 'f0c...da7' received by node.
+```
 
 ## Wait for Delegate to be voted in & forge a block
 
-*TODO*
-
-1. Use one of the [explorer]() in the link section.
-2. Use the lisk-lastblocks command to detect forged block from the local logs. 
+1. Use one of the [explorer](#explorer) in the link section.
+2. Use the `lisk-lastblocks` alias command to detect forged block from the local logs. 
 
 # Configure HTTPS API Endpoint
 
