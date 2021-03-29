@@ -12,17 +12,14 @@ Misc. stuff related to lisk-core beta network.
   - [Install Base](#install-base)
   - [Configure UFW firewall](#configure-ufw-firewall)
   - [Install Lisk-Core Using Binary Method](#install-lisk-core-using-binary-method)
-  - [Create your account](#create-your-account)
-  - [Fund the account](#fund-the-account)
-  - [Create an 'Encryption Password'](#create-an-encryption-password)
-  - [Create the encrypted version of your Account Passphrase](#create-the-encrypted-version-of-your-account-passphrase)
-  - [Generate hash onion](#generate-hash-onion)
-  - [Create custom 'config.json' file](#create-custom-configjson-file)
   - [Install & Configure PM2](#install--configure-pm2)
-    - [Install NodeJS, NPM & PM2](#install-nodejs-npm--pm2)
-    - [Install PM2 Max Log Size Manager](#install-pm2-max-log-size-manager)
-    - [Create lisk-core start configuration file for PM2](#create-lisk-core-start-configuration-file-for-pm2)
-  - [Create Forging Enable script and make it executable](#create-forging-enable-script-and-make-it-executable)
+  - [Create Bash Alias](#create-bash-alias)
+  - [Start Lisk](#start-lisk)
+  - [Download & Execute Delegate Account Creation Script](#download--execute-delegate-account-creation-script)
+  - [Copy Auto Config.json to Production Path](#copy-auto-configjson-to-production-path)
+  - [Download Forging Enable Script](#download-forging-enable-script)
+  - [Restart PM2 (Reload Lisk on production config.)](#restart-pm2-reload-lisk-on-production-config)
+  - [Fund the account](#fund-the-account)
   - [Nginx & SSL Notes](#nginx--ssl-notes)
   - [API Notes](#api-notes)
 
@@ -96,7 +93,7 @@ sudo ufw allow "123/udp"
 # Mail Server (Optional)
 sudo ufw allow "25/tcp"
 
-# Nginx (Lisk-Core API, Optional)
+# Nginx (Remote Lisk-Core API, Optional)
 sudo ufw allow "80/tcp"
 sudo ufw allow "443/tcp"
 
@@ -118,26 +115,83 @@ echo 'export PATH="$PATH:$HOME/lisk-core/bin"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Create your account
+## Install & Configure PM2
 
 ```shell
-lisk-core account:create
+# Install NodeJS, NPM & PM2
+sudo apt-get -y install nodejs npm
+sudo npm i -g pm2
+
+# Install PM2 Max Log Size Manager
+pm2 install pm2-logrotate
+pm2 set pm2-logrotate:max_size 100M
+
+# Download lisk-core configuration file for PM2
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-core-first-start.pm2.json -o ~/lisk-core-first-start.pm2.json
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-core.pm2.json -o ~/lisk-core.pm2.json
+
 ```
 
-Save the output to a safe place. *Refered as:**##AccountProperty** for the rest of these notes.*
+## Create Bash Alias
 
-Example:
-```json
-[
- {
-  "passphrase": "useless liberty page arctic depend salt smoke chair unhappy art lecture nut",
-  "privateKey": "abe2b8622f33e185c2d9635db8fea1e0c0a1408e7389e34c663a50e73d4121f433267f3bdc32124cf28016707136bcbdc9dc8033a45aefa41974f9071fca306d",
-  "publicKey": "33267f3bdc32124cf28016707136bcbdc9dc8033a45aefa41974f9071fca306d",
-  "binaryAddress": "2cdc32bc5df0d8a62d9808894ed07b4d791d3be5",
-  "address": "lskmt7cm8vhfco6o5o2xvpkhkcs4qjyd7gm3wn7xj"
- }
-]
+```shell
+cat > ~/.bash_aliases << EOF_Alias_Config 
+alias lisk-firststart='pm2 start ~/lisk-core-first-start.pm2.json'
+alias lisk-start='pm2 start ~/lisk-core.pm2.json'
+alias lisk-stop='pm2 stop lisk-core'
+alias lisk-logs='tail -f ~/.lisk/lisk-core/logs/lisk.log'
+alias lisk-pm2logs='pm2 logs'
+alias lisk-lastblocks='tail -n 1000 ~/.lisk/lisk-core/logs/lisk.log | grep "Forged new block"'
+alias lisk-forge='~/lisk-forge-enable.sh'
+EOF_Alias_Config
+
+source ~/.bashrc
 ```
+
+## Start Lisk
+
+```shell
+lisk-firststart
+
+# Verify Lisk-Core Logs (Optional)
+lisk-logs
+
+# Verify PM2 Logs (Optional)
+lisk-pm2-logs
+```
+
+## Download & Execute Delegate Account Creation Script
+
+All-in-one script tasks:
+* Create Account
+* Create Encryption Password
+* Create Encrypted Passphrase
+* Create Auto Hash-Onion File to ~/lisk-auto-onion.json
+* Create Auto Config.json File to ~/lisk-auto-config.json
+
+```shell
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-create-account.sh -o ~/lisk-create-account.sh
+chmod 700 ~/lisk-create-account.sh
+~/lisk-create-account.sh
+```
+
+## Copy Auto Config.json to Production Path
+
+```shell
+cp ~/lisk-auto-config.json ~/lisk-core/config.json
+```
+
+## Download Forging Enable Script
+
+```shell
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-forging-enable.sh -o ~/lisk-forge-enable.sh
+chmod 700 ~/lisk-forging-enable.sh
+```
+
+## Restart PM2 (Reload Lisk on production config.)
+
+lisk-stop
+lisk-start
 
 ## Fund the account
 
@@ -145,79 +199,6 @@ https://betanet5-faucet.lisk.io/
 
 Or ask Shuse2 at Lisk's Discord using account BinaryAddress.
 
-## Create an 'Encryption Password'
-
-```shell
-lisk-core account:create
-```
-
-Save the dummy account passphrase to a safe place. *Refered as:**##EncryptionPassword##** for the rest of these notes.*
-
-Example:
-```txt
-Encryption Password:
-
-minimum effort act inspire convince student interest borrow loan radar lab depart
-```
-
-## Create the encrypted version of your Account Passphrase
-
-```shell
-lisk-core passphrase:encrypt
-
-Please enter your secret passphrase:    ##AccountPassphrase##
-Please re-enter your secret passphrase: ##AccountPassphrase##
-Please enter your password:             ##EncryptionPassword## 
-Please re-enter your password:          ##EncryptionPassword##
-```
-
-Save the json output to a safe place. *Refered as:**##EncryptedAccountPassphrase##** for the rest of these notes.*
-
-Example:
-```json
-{
-    "encryptedPassphrase":"iterations=1000000&cipherText=fc9375fa0bd91efe168c517bdc2fbab79506afe8dddc30253a48641c3e692801cfd049cc13a925439d36635fbcb255880c64975127b9abd65ba10be978d010c6b685b2fd9c11554ec02343&iv=26ebd88e23e999044b0f943b&salt=478843d5df5b6984d07324161d612243&tag=0dfc78bf05ba48774a87790e6a42798b&version=1"
-}
-```
-
-## Generate hash onion
-
-```shell
-lisk-core hash-onion -o ~/hash_onion.json
-```
-
-## Create custom 'config.json' file
-
-TODO
-
-## Install & Configure PM2
-
-### Install NodeJS, NPM & PM2
-
-```shell
-sudo apt-get -y install nodejs npm
-sudo npm i -g pm2
-```
-
-### Install PM2 Max Log Size Manager
-
-```shell
-pm2 install pm2-logrotate
-pm2 set pm2-logrotate:max_size 100M
-```
-
-### Create lisk-core start configuration file for PM2
-
-```shell
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-core.pm2.json -o ~/lisk-core.pm2.json
-```
-
-## Create Forging Enable script and make it executable
-
-```shell
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-forging-enable.sh -o ~/lisk-forge-enable.sh
-chmod 700 ~/lisk-forging-enable.sh
-```
 
 ## Nginx & SSL Notes
 
