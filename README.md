@@ -25,6 +25,7 @@ Misc. stuff related to lisk-core beta network.
   - [Download Forging Enable Script](#download-forging-enable-script)
   - [Activate Forging](#activate-forging)
   - [Self-Vote your delegate account](#self-vote-your-delegate-account)
+  - [Wait for Delegate to be voted in & forge a block](#wait-for-delegate-to-be-voted-in--forge-a-block)
 - [Configure HTTPS API Endpoint](#configure-https-api-endpoint)
   - [Configure UFW firewall](#configure-ufw-firewall-1)
   - [Configure DNS 'A Record'](#configure-dns-a-record)
@@ -261,6 +262,12 @@ lisk-forge
 
 *TODO*
 
+## Wait for Delegate to be voted in & forge a block
+
+*TODO*
+
+1. Use one of the [explorer]() in the link section.
+2. Use the lisk-lastblocks command to detect forged block from the local logs. 
 
 # Configure HTTPS API Endpoint
 
