@@ -25,6 +25,7 @@ Misc. stuff related to lisk-core beta network.
 - [Configure HTTPS API Endpoint](#configure-https-api-endpoint)
   - [Configure UFW firewall](#configure-ufw-firewall-1)
   - [Configure DNS 'A Record'](#configure-dns-a-record)
+    - [Test & Wait](#test--wait)
   - [Install Nginx & Certbot](#install-nginx--certbot)
   - [Create SSL cert.](#create-ssl-cert)
   - [Configure Nginx](#configure-nginx)
@@ -60,7 +61,7 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 
 ## Guides
 
-* [Punkrock - Install Lisk Betanet v5](https://punkrock.github.io/lisk-betanet-v5-tutorial.html)
+* [Punkrock - Install Lisk BetaNet v5](https://punkrock.github.io/lisk-betanet-v5-tutorial.html)
 * [Lemii - Securing a Lisk Node with Nginx and Certbot](https://github.com/Lemii/guides/blob/master/securing-a-lisk-node-with-nginx-and-certbot.md)
 * [Lemii - Managing the Lisk Core process with PM2](https://github.com/Lemii/guides/blob/master/managing-the-lisk-core-process-with-pm2.md)
 
@@ -234,6 +235,11 @@ Example:
 ```txt
 100.150.200.250/32      beta.domain.com
 ```
+
+### Test & Wait
+
+Before you can continue, you must make sure the DNS record is working.
+Best way to test it is to ping the A record address and wait for the IP to resolve correctly.
 
 ## Install Nginx & Certbot
 
