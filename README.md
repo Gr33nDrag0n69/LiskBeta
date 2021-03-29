@@ -29,6 +29,7 @@ Misc. stuff related to lisk-core beta network.
   - [Install Nginx & Certbot](#install-nginx--certbot)
   - [Create SSL cert.](#create-ssl-cert)
   - [Configure Nginx](#configure-nginx)
+  - [Update Certificate](#update-certificate)
 - [API](#api)
 
 # Disclaimer
@@ -255,6 +256,10 @@ sudo certbot --nginx -d beta.domain.com --email forgetit@notstupid.com --agree-t
 ```
 
 ## Configure Nginx
+
+*TODO*
+
+## Update Certificate
 
 *TODO*
 
