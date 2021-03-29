@@ -33,7 +33,7 @@ Valid for Lisk Betanet ONLY!
 
 **For most questions, take the time to read official Lisk-Core & Lisk-SDK documentation! [Links below](#documentation)**
 
-This page is not intended to be a dummy proof guide, more a sanitized version of my personnal notes created by reading others guides and official documentation.
+This page is not intended to be a dummy proof guide, it's a guide based on my configuration and tools created by reading others guides and official documentation.
 
 Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii for their useful notes and Korben3 & Moosty for their blockcahin explorers.
 
