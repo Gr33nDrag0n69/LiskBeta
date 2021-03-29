@@ -2,8 +2,8 @@
 
 # Gr33nDrag0n v1.0.0 (2021-03-28)
 
-Onion_FilePath="$HOME/lisk-auto-onion.json"
-Config_FilePath="$HOME/lisk-auto-config.json"
+OnionFilename="lisk-auto-onion.json"
+ConfigFilename="lisk-auto-config.json"
 
 echo -e "Creating Account ...\n"
 LiskAccount_JsonData=$( lisk-core account:create | jq '.[0]' )
@@ -19,14 +19,14 @@ EncryptionPassword=$( lisk-core account:create | jq '.[0] | .passphrase' |  tr -
 echo -e "Creating Account Encrypted Passphrase ...\n"
 EncryptedPassphrase=$( lisk-core passphrase:encrypt --password "$EncryptionPassword" --passphrase "$AccountPassphrase" | jq '.encryptedPassphrase' |  tr -d '"' )
 
-echo -e "Writing Hash-Onion to $Onion_FilePath ...\n"
-lisk-core hash-onion -o $Onion_FilePath
+echo -e "Writing Hash-Onion to ~/$OnionFilename ...\n"
+lisk-core hash-onion -o "$HOME/$OnionFilename"
 
 echo -e "Loading Hash-Onion to Memory ...\n"
-HashOnion=$( cat $Onion_FilePath )
+HashOnion=$( cat "$HOME/$OnionFilename" )
 
-echo -e "Writing Config to $Config_FilePath ...\n"
-cat > $Config_FilePath << EOF_Config 
+echo -e "Writing Config to ~/$ConfigFilename ...\n"
+cat > "$HOME/$ConfigFilename" << EOF_Config 
 {
     "logger": {
         "fileLogLevel": "info"
