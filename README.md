@@ -21,6 +21,7 @@ Misc. stuff related to lisk-core beta network.
   - [Fund the account](#fund-the-account)
   - [Wait for funds](#wait-for-funds)
   - [Register Delegate Name](#register-delegate-name)
+  - [Wait for Delegate Name Registration Confirmed](#wait-for-delegate-name-registration-confirmed)
   - [Download Forging Enable Script](#download-forging-enable-script)
   - [Activate Forging](#activate-forging)
   - [Self-Vote your delegate account](#self-vote-your-delegate-account)
@@ -206,13 +207,15 @@ lisk-start
 *Edit ##AccountBinaryAddress##*
 
 ```shell
-lisk-core account:get ##AccountBinaryAddress##
+lisk-core account:get ##AccountBinaryAddress## --pretty
 ```
+
+Account should exist & 'token -> balance' should be greater then zero.
 
 ## Register Delegate Name
 *Edit ##DelegateName## & ##AccountPassphrase##*
 
-```shell
+```txt
 # Create Tx
 
 lisk-core transaction:create 5 0 1100000000
@@ -233,6 +236,15 @@ lisk-core transaction:send 0805...005
 
 Transaction with id: 'a3d...5b0' received by node.
 ```
+
+## Wait for Delegate Name Registration Confirmed
+*Edit ##AccountBinaryAddress##*
+
+```txt
+lisk-core account:get ##AccountBinaryAddress## --pretty
+```
+
+Account should exist & 'dpos -> delegate -> username' should be set.
 
 ## Download Forging Enable Script
 
