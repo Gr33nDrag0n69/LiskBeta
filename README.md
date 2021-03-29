@@ -24,8 +24,11 @@ Misc. stuff related to lisk-core beta network.
   - [Self-Vote your delegate account](#self-vote-your-delegate-account)
 - [Configure HTTPS API Endpoint](#configure-https-api-endpoint)
   - [Configure UFW firewall](#configure-ufw-firewall-1)
-  - [Nginx & SSL Notes](#nginx--ssl-notes)
-  - [API Notes](#api-notes)
+  - [Configure DNS 'A Record'](#configure-dns-a-record)
+  - [Install Nginx & Certbot](#install-nginx--certbot)
+  - [Create SSL cert.](#create-ssl-cert)
+  - [Configure Nginx](#configure-nginx)
+- [API](#api)
 
 # Disclaimer
 
@@ -35,7 +38,7 @@ Valid for Lisk Betanet ONLY!
 
 This page is not intended to be a dummy proof guide, it's a guide based on my configuration and tools created by reading others guides and official documentation.
 
-Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii for their useful notes and Korben3 & Moosty for their blockcahin explorers.
+Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii for their useful notes and Korben3 & Moosty for their blockchain explorers.
 
 # Links
 
@@ -223,10 +226,32 @@ sudo ufw allow "443/tcp"
 sudo ufw status
 ```
 
-## Nginx & SSL Notes
+## Configure DNS 'A Record'
+
+Using your domain name DNS manager, create a 'A Record'.
+
+Example:
+```txt
+100.150.200.250/32      beta.domain.com
+```
+
+## Install Nginx & Certbot
+
+```shell
+sudo apt-get -y install nginx certbot python-certbot-nginx
+```
+
+## Create SSL cert.
+*Edit DomainName & Email*
+
+```shell
+sudo certbot --nginx -d beta.domain.com --email forgetit@notstupid.com --agree-tos
+```
+
+## Configure Nginx
 
 *TODO*
 
-## API Notes
+# API
 
 *TODO*
