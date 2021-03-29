@@ -20,7 +20,7 @@ echo -e "Creating Account Encrypted Passphrase ...\n"
 EncryptedPassphrase=$( lisk-core passphrase:encrypt --password "$EncryptionPassword" --passphrase "$AccountPassphrase" | jq '.encryptedPassphrase' |  tr -d '"' )
 
 echo -e "Writing Hash-Onion to $Onion_FilePath ...\n"
-lisk-core hash-onion -o "$Onion_FilePath"
+lisk-core hash-onion -o $Onion_FilePath
 
 echo -e "Loading Hash-Onion to Memory ...\n"
 HashOnion=$( cat "$Onion_FilePath" )
