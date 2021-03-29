@@ -17,10 +17,12 @@ Misc. stuff related to lisk-core beta network.
   - [Start Lisk](#start-lisk)
   - [Download & Execute Delegate Account Creation Script](#download--execute-delegate-account-creation-script)
   - [Copy Auto Config.json to Production Path](#copy-auto-configjson-to-production-path)
-  - [Download Forging Enable Script](#download-forging-enable-script)
   - [Restart PM2 (Reload Lisk on production config.)](#restart-pm2-reload-lisk-on-production-config)
-  - [Activate Forging](#activate-forging)
   - [Fund the account](#fund-the-account)
+  - [Wait for funds](#wait-for-funds)
+  - [Register Delegate Name](#register-delegate-name)
+  - [Download Forging Enable Script](#download-forging-enable-script)
+  - [Activate Forging](#activate-forging)
   - [Self-Vote your delegate account](#self-vote-your-delegate-account)
 - [Configure HTTPS API Endpoint](#configure-https-api-endpoint)
   - [Configure UFW firewall](#configure-ufw-firewall-1)
@@ -187,12 +189,6 @@ chmod 700 ~/lisk-create-account.sh
 cp ~/lisk-auto-config.json ~/lisk-core/config.json
 ```
 
-## Download Forging Enable Script
-
-```shell
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-enable-forging.sh -o ~/lisk-enable-forging.sh
-chmod 700 ~/lisk-enable-forging.sh
-```
 
 ## Restart PM2 (Reload Lisk on production config.)
 
@@ -201,17 +197,54 @@ lisk-stop
 lisk-start
 ```
 
-## Activate Forging
-
-```shell
-lisk-forge
-```
-
 ## Fund the account
 
 1. Using [Lisk.io Faucet](https://betanet5-faucet.lisk.io/) with 'Account Address'.
 2. Asking Shuse2 in Lisk's Discord using 'Account BinaryAddress'.
 
+## Wait for funds
+*Edit ##AccountBinaryAddress##*
+
+```shell
+lisk-core account:get ##AccountBinaryAddress##
+```
+
+## Register Delegate Name
+*Edit ##DelegateName## & ##AccountPassphrase##*
+
+```shell
+# Create Tx
+
+lisk-core transaction:create 5 0 1100000000
+
+? Please enter username:      ##DelegateName##
+? Please enter passphrase:    ##AccountPassphrase##
+? Please re-enter passphrase: ##AccountPassphrase##
+
+# Save Output
+
+{"transaction":"0805...005"}
+
+# Broadcast Tx
+
+lisk-core transaction:send 0805...005
+
+# Should output
+
+Transaction with id: 'a3d...5b0' received by node.
+```
+
+## Download Forging Enable Script
+
+```shell
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-enable-forging.sh -o ~/lisk-enable-forging.sh
+chmod 700 ~/lisk-enable-forging.sh
+```
+## Activate Forging
+
+```shell
+lisk-forge
+```
 ## Self-Vote your delegate account
 
 *TODO*
