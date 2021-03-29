@@ -190,12 +190,16 @@ chmod 700 ~/lisk-enable-forging.sh
 
 ## Restart PM2 (Reload Lisk on production config.)
 
+```shell
 lisk-stop
 lisk-start
+```
 
 ## Activate Forging
 
+```shell
 lisk-forge
+```
 
 ## Fund the account
 
