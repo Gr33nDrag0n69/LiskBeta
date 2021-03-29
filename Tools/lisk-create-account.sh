@@ -2,8 +2,8 @@
 
 # Gr33nDrag0n v1.0.0 (2021-03-28)
 
-Onion_FilePath="~/lisk-auto-onion.json"
-Config_FilePath="~/lisk-auto-config.json"
+Onion_FilePath="$HOME/lisk-auto-onion.json"
+Config_FilePath="$HOME/lisk-auto-config.json"
 
 echo -e "Creating Account ...\n"
 LiskAccount_JsonData=$( lisk-core account:create | jq '.[0]' )
