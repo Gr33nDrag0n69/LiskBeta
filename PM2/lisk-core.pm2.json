@@ -1,0 +1,8 @@
+{
+  "name": "lisk-core",
+  "script": "lisk-core start --enable-http-api-plugin",
+  "env": {
+    "LISK_CONFIG_FILE": "lisk-core/config.json",
+    "LISK_NETWORK": "betanet"
+  }
+}
