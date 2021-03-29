@@ -97,10 +97,6 @@ sudo ufw allow "123/udp"
 # Mail Server (Optional)
 sudo ufw allow "25/tcp"
 
-# Nginx (Remote Lisk-Core API, Optional)
-sudo ufw allow "80/tcp"
-sudo ufw allow "443/tcp"
-
 # Lisk-Core
 sudo ufw allow "5000/tcp"
 sudo ufw allow "5001/tcp"
