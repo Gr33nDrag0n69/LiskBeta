@@ -19,7 +19,11 @@ Misc. stuff related to lisk-core beta network.
   - [Copy Auto Config.json to Production Path](#copy-auto-configjson-to-production-path)
   - [Download Forging Enable Script](#download-forging-enable-script)
   - [Restart PM2 (Reload Lisk on production config.)](#restart-pm2-reload-lisk-on-production-config)
+  - [Activate Forging](#activate-forging)
   - [Fund the account](#fund-the-account)
+  - [Self-Vote your delegate account](#self-vote-your-delegate-account)
+- [Configure HTTPS API Endpoint](#configure-https-api-endpoint)
+  - [Configure UFW firewall](#configure-ufw-firewall-1)
   - [Nginx & SSL Notes](#nginx--ssl-notes)
   - [API Notes](#api-notes)
 
@@ -63,7 +67,7 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 
 ## Tools
 
-* [Gr33nDrag0n - Enable Delegate Account Forging Bash Script](./Tools/lisk-forging-enable.sh)
+* [Gr33nDrag0n - Enable Delegate Account Forging Bash Script](./Tools/lisk-enable-forging.sh)
 
 # Install Lisk-Core 3 Beta 5 on Ubuntu
 
@@ -184,8 +188,8 @@ cp ~/lisk-auto-config.json ~/lisk-core/config.json
 ## Download Forging Enable Script
 
 ```shell
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-forging-enable.sh -o ~/lisk-forge-enable.sh
-chmod 700 ~/lisk-forging-enable.sh
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-enable-forging.sh -o ~/lisk-enable-forging.sh
+chmod 700 ~/lisk-enable-forging.sh
 ```
 
 ## Restart PM2 (Reload Lisk on production config.)
@@ -193,12 +197,30 @@ chmod 700 ~/lisk-forging-enable.sh
 lisk-stop
 lisk-start
 
+## Activate Forging
+
+lisk-forge
+
 ## Fund the account
 
-https://betanet5-faucet.lisk.io/
+1. Using [Lisk.io Faucet](https://betanet5-faucet.lisk.io/) with 'Account Address'.
+2. Asking Shuse2 in Lisk's Discord using 'Account BinaryAddress'.
 
-Or ask Shuse2 at Lisk's Discord using account BinaryAddress.
+## Self-Vote your delegate account
 
+*TODO*
+
+
+# Configure HTTPS API Endpoint
+
+## Configure UFW firewall
+
+```shell
+sudo ufw allow "80/tcp"
+sudo ufw allow "443/tcp"
+
+sudo ufw status
+```
 
 ## Nginx & SSL Notes
 
@@ -206,4 +228,4 @@ Or ask Shuse2 at Lisk's Discord using account BinaryAddress.
 
 ## API Notes
 
-TODO
+*TODO*
