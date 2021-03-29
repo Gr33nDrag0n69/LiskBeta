@@ -23,10 +23,10 @@ echo -e "Writing Hash-Onion to $Onion_FilePath ...\n"
 lisk-core hash-onion -o $Onion_FilePath
 
 echo -e "Loading Hash-Onion to Memory ...\n"
-HashOnion=$( cat "$Onion_FilePath" )
+HashOnion=$( cat $Onion_FilePath )
 
 echo -e "Writing Config to $Config_FilePath ...\n"
-cat > "$Config_FilePath" << EOF_Config 
+cat > $Config_FilePath << EOF_Config 
 {
     "logger": {
         "fileLogLevel": "info"
