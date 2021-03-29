@@ -7,7 +7,7 @@ Misc. stuff related to lisk-core beta network.
   - [Explorer](#explorer)
   - [Guides](#guides)
   - [Public API Endpoints](#public-api-endpoints)
-  - [Tools](#tools)
+  - [Scripts](#scripts)
 - [Install Lisk-Core 3 Beta 5 on Ubuntu](#install-lisk-core-3-beta-5-on-ubuntu)
   - [Install Base](#install-base)
   - [Configure UFW firewall](#configure-ufw-firewall)
@@ -65,9 +65,10 @@ Thanks to all peoples in lisk chat network. In particular to Punkrock & Lemii fo
 
 * [Lemii - lisktools.eu](https://betanet5-api.lisktools.eu/)
 
-## Tools
+## Scripts
 
-* [Gr33nDrag0n - Enable Delegate Account Forging Bash Script](./Tools/lisk-enable-forging.sh)
+* [Gr33nDrag0n - Create Delegate Account Bash Script](./SH/lisk-create-account.sh)
+* [Gr33nDrag0n - Enable Delegate Account Forging Bash Script](./SH/lisk-enable-forging.sh)
 
 # Install Lisk-Core 3 Beta 5 on Ubuntu
 
@@ -127,8 +128,8 @@ pm2 install pm2-logrotate
 pm2 set pm2-logrotate:max_size 100M
 
 # Download lisk-core configuration file for PM2
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-core-first-start.pm2.json -o ~/lisk-core-first-start.pm2.json
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-core.pm2.json -o ~/lisk-core.pm2.json
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core-first-start.pm2.json -o ~/lisk-core-first-start.pm2.json
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core.pm2.json -o ~/lisk-core.pm2.json
 
 ```
 
@@ -142,7 +143,7 @@ alias lisk-stop='pm2 stop lisk-core'
 alias lisk-logs='tail -f ~/.lisk/lisk-core/logs/lisk.log'
 alias lisk-pm2logs='pm2 logs'
 alias lisk-lastblocks='tail -n 1000 ~/.lisk/lisk-core/logs/lisk.log | grep "Forged new block"'
-alias lisk-forge='~/lisk-forge-enable.sh'
+alias lisk-forge='~/lisk-enable-forging.sh'
 EOF_Alias_Config
 
 source ~/.bashrc
@@ -170,7 +171,7 @@ All-in-one script tasks:
 * Create Auto Config.json File to ~/lisk-auto-config.json
 
 ```shell
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-create-account.sh -o ~/lisk-create-account.sh
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-create-account.sh -o ~/lisk-create-account.sh
 chmod 700 ~/lisk-create-account.sh
 ~/lisk-create-account.sh
 ```
@@ -184,7 +185,7 @@ cp ~/lisk-auto-config.json ~/lisk-core/config.json
 ## Download Forging Enable Script
 
 ```shell
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/Tools/lisk-enable-forging.sh -o ~/lisk-enable-forging.sh
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-enable-forging.sh -o ~/lisk-enable-forging.sh
 chmod 700 ~/lisk-enable-forging.sh
 ```
 
