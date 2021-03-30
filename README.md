@@ -8,7 +8,7 @@ Misc. stuff related to lisk-core beta network.
   - [Guides](#guides)
   - [Public API Endpoints](#public-api-endpoints)
   - [Scripts](#scripts)
-  - [PM2 Config. File](#pm2-config-file)
+  - [Misc. File](#misc-file)
 
 # Disclaimer
 
@@ -44,7 +44,7 @@ My experience on betanet wouldn't have been the same without your work.
 ## Guides
 
 * [Gr33nDrag0n - Install Lisk-Core 3 Beta 5 on Ubuntu using binaries, PM2 & custom scripts](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/InstallLiskCore.md)
-* [Gr33nDrag0n - BASIC & ADVANCED Configuration of Lisk-Core API Endpoint)](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/ConfigureAPI.md)
+* [Gr33nDrag0n - BASIC & ADVANCED Configuration of Lisk-Core API Endpoint](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/ConfigureAPI.md)
 * [Punkrock - Install Lisk BetaNet v5 using NPM & screen](https://punkrock.github.io/lisk-betanet-v5-tutorial.html)
 * [Lemii - Securing a Lisk Node with Nginx and Certbot](https://github.com/Lemii/guides/blob/master/securing-a-lisk-node-with-nginx-and-certbot.md)
 * [Lemii - Managing the Lisk Core process with PM2](https://github.com/Lemii/guides/blob/master/managing-the-lisk-core-process-with-pm2.md)
@@ -59,6 +59,7 @@ My experience on betanet wouldn't have been the same without your work.
 * [Gr33nDrag0n - Create Delegate Account Bash Script](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-create-account.sh)
 * [Gr33nDrag0n - Enable Delegate Account Forging Bash Script](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-enable-forging.sh)
 
-## PM2 Config. File
+## Misc. File
 
-* [Gr33nDrag0n - ](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core.pm2.json)
+* [Gr33nDrag0n - PM2 Configuration Example](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core.pm2.json)
+* [Gr33nDrag0n - NGINX Configuration Example]()
