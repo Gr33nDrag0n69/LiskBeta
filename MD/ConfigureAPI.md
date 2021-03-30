@@ -1,5 +1,5 @@
 
-Lisk-Core API Configuration
+Lisk-Core API Configuration (INCOMPLETE - DO NOT USE YET!)
 
 - [Basic Configuration](#basic-configuration)
   - [Enable HTTP API plugin](#enable-http-api-plugin)
