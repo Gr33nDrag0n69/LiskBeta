@@ -51,7 +51,7 @@ My experience on betanet wouldn't have been the same without your work.
 
 ## Public API Endpoints
 
-* [Gr33nDrag0n - api.beta.lisknode.io (SOON)](https://api.beta.lisknode.io/)
+* **SOON™** [Gr33nDrag0n - api.beta.lisknode.io](https://api.beta.lisknode.io/)
 * [Lemii - lisktools.eu](https://betanet5-api.lisktools.eu/)
 
 ## Scripts
@@ -62,4 +62,4 @@ My experience on betanet wouldn't have been the same without your work.
 ## Misc. File
 
 * [Gr33nDrag0n - PM2 Configuration Example](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core.pm2.json)
-* [Gr33nDrag0n - NGINX Configuration Example *SOON*]()
+* **SOON™** [Gr33nDrag0n - NGINX Configuration Example]()
