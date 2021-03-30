@@ -44,7 +44,7 @@ My experience on betanet wouldn't have been the same without your work.
 ## Guides
 
 * [Gr33nDrag0n - Install Lisk-Core 3 Beta 5 on Ubuntu using binaries, PM2 & custom scripts](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/InstallLiskCore.md)
-* [Gr33nDrag0n - BASIC & ADVANCED Configuration of Lisk-Core API Endpoint *(SOON)*](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/ConfigureAPI.md)
+* [Gr33nDrag0n - BASIC & ADVANCED Configuration of Lisk-Core API Endpoint **SOON™**](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/ConfigureAPI.md)
 * [Punkrock - Install Lisk BetaNet v5 using NPM & screen](https://punkrock.github.io/lisk-betanet-v5-tutorial.html)
 * [Lemii - Securing a Lisk Node with Nginx and Certbot](https://github.com/Lemii/guides/blob/master/securing-a-lisk-node-with-nginx-and-certbot.md)
 * [Lemii - Managing the Lisk Core process with PM2](https://github.com/Lemii/guides/blob/master/managing-the-lisk-core-process-with-pm2.md)
