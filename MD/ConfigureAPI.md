@@ -92,7 +92,7 @@ Using your domain name DNS manager, create a 'A Record'.
 
 Example:
 ```txt
-100.150.200.250/32      beta.domain.com
+100.150.200.250/32      betanet-api.lisknode.io
 ```
 
 ### Test & Wait
@@ -110,7 +110,7 @@ sudo apt-get -y install nginx certbot python-certbot-nginx
 *Edit DomainName & Email*
 
 ```shell
-sudo certbot --nginx -d beta.domain.com --email forgetit@notstupid.com --agree-tos
+sudo certbot --nginx -d betanet-api.lisknode.io --email forgetit@notstupid.com --agree-tos
 ```
 
 ## Configure Nginx
