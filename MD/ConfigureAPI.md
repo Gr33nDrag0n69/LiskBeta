@@ -1,5 +1,5 @@
 
-Lisk-Core API Configuration (INCOMPLETE - DO NOT USE YET!)
+Lisk-Core API Configuration
 
 - [Basic Configuration](#basic-configuration)
   - [Enable HTTP API plugin](#enable-http-api-plugin)
@@ -13,7 +13,9 @@ Lisk-Core API Configuration (INCOMPLETE - DO NOT USE YET!)
   - [Install Nginx & Certbot](#install-nginx--certbot)
   - [Create SSL cert.](#create-ssl-cert)
   - [Configure Nginx](#configure-nginx)
-  - [Update Certificate](#update-certificate)
+  - [Test Remote HTTPS API](#test-remote-https-api)
+  - [Manually Update Certificate](#manually-update-certificate)
+  - [Restrict HTTPS API access](#restrict-https-api-access)
 
 # Basic Configuration
 
@@ -103,7 +105,7 @@ sudo apt-get -y install nginx certbot python-certbot-nginx
 *Edit DomainName & Email*
 
 ```shell
-sudo certbot --nginx -d betanet-api.lisknode.io --email forgetit@notstupid.com --agree-tos
+sudo certbot certonly --nginx -d betanet-api.lisknode.io --email forgetit@notstupid.com --agree-tos --force-renewal
 ```
 
 ## Configure Nginx
@@ -114,6 +116,8 @@ sudo mkdir -p /etc/nginx/ssl/
 sudo openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096
 
 sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.original
+
+sudo rm -f /etc/nginx/sites-enabled/default
 
 sudo curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/NGINX/api.template.nginx.conf -o /etc/nginx/nginx.conf
 
@@ -127,6 +131,22 @@ sudo systemctl enable nginx
 
 ```
 
-## Update Certificate
+## Test Remote HTTPS API
+
+Using a browser from another IP, test basic get using `https://betanet-api.lisknode.io/api/node/info` in the address bar. If you can see json output in the browser the remote secure endpoint is working.
+
+## Manually Update Certificate
+
+```shell
+sudo certbot renew --force-renewal
+
+sudo systemctl restart nginx
+
+```
+
+## Restrict HTTPS API access
 
 *TODO*
+
+- Close port 80 and 443 and use allow from management ip
+- the ports 80 & 443 have to be pre-opened and re-closed everytime the certificate renew command is executed.
