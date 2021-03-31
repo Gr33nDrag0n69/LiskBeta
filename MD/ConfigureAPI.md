@@ -62,6 +62,8 @@ curl -X 'GET' 'http://127.0.0.1:5678/api/node/info' -H 'accept: application/json
 
 **If you only want to use the API Endpoint from/to the same server, you already have completed API configuration.**
 
+Go to [Lisk-Core API Documentation](https://lisk.io/documentation/lisk-core/v3/reference/api.html) for more infos on the available commands.
+
 # Advanced Configuration
 
 If you want to use the API Endpoint from remote computers (workstation, server, etc.) this guide is for you.
