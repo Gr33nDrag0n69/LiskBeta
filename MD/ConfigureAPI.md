@@ -3,7 +3,9 @@ Lisk-Core API Configuration (INCOMPLETE - DO NOT USE YET!)
 
 - [Basic Configuration](#basic-configuration)
   - [Enable HTTP API plugin](#enable-http-api-plugin)
-  - [Configure API whitelist](#configure-api-whitelist)
+    - [PM2](#pm2)
+    - [BASH](#bash)
+  - [Test the localhost API](#test-the-localhost-api)
 - [Advanced Configuration](#advanced-configuration)
   - [Configure UFW firewall](#configure-ufw-firewall)
   - [Configure DNS 'A Record'](#configure-dns-a-record)
@@ -15,20 +17,33 @@ Lisk-Core API Configuration (INCOMPLETE - DO NOT USE YET!)
 
 # Basic Configuration
 
+By default, with lisk-core 3, the HTTP API is disabled.
+Most commands that were requiring API calls in older versions are now available with the `lisk-core` binary directly.
+
 ## Enable HTTP API plugin
 
-By default, with lisk-core 3, the HTTP API is disabled.
-To enable it, the lisk-core process need to be started with the `--enable-http-api-plugin` parameter.
-If you use my PM2 configuration file to manage the process, it's enabled by default.
+To enable API properly, you need to
+* Enable the plugin
+* Configure the port
+* Configure the whitelist to localhost only
 
-Test the local API is functional:
+### PM2
+*If you are using PM2 configuration file* 
+
+Install 'API' PM2 as active configuration & restart the process.
+
 ```shell
+lisk-stop
+cp ~/lisk-core.api.pm2.json ~/lisk-core.pm2.json
+lisk-start
 ```
 
-## Configure API whitelist
+### BASH
+*If you are NOT using PM2 configuration file* 
 
-The config.json file you are using should have the following configuration in it.
-If not present, add it now and restart the lisk-core process.
+1. Configure API whiteList in config.json 
+
+If not present, add this in your config.json and restart the lisk-core process.
 ```json
 {
     "plugins": {
@@ -41,7 +56,17 @@ If not present, add it now and restart the lisk-core process.
 }
 ```
 
-The main idea here is to make sure that any API calls made on default communication ports (5000, 5001) that are not coming from local server will be blocked.
+2. Start the lisk-core process using extra parameters
+
+```shell
+lisk-core start -n betanet -c ~/lisk-core/config.json --enable-http-api-plugin --http-api-plugin-port=5678`
+```
+
+## Test the localhost API 
+
+```shell
+curl -X 'GET' 'http://127.0.0.1:5678/api/node/info' -H 'accept: application/json' | jq '.'
+```
 
 **If you only want to use the API Endpoint from/to the same server, you already have completed API configuration.**
 
