@@ -1,0 +1,11 @@
+{
+  "name": "lisk-core",
+  "script": "lisk-core start --enable-http-api-plugin",
+  "env": {
+    "LISK_CONFIG_FILE": "lisk-core/config.json",
+    "LISK_NETWORK": "betanet",
+    "LISK_PORT": 5001,
+    "LISK_HTTP_API_PLUGIN_PORT":5678,
+    "LISK_HTTP_API_PLUGIN_WHITELIST": [ "127.0.0.1" ]
+  }
+}
