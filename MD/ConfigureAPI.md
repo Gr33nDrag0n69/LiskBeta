@@ -19,6 +19,11 @@ Lisk-Core API Configuration (INCOMPLETE - DO NOT USE YET!)
 
 By default, with lisk-core 3, the HTTP API is disabled.
 Most commands that were requiring API calls in older versions are now available with the `lisk-core` binary directly.
+Make sure to give a look to these commands since the best documentation so far for lisk-core binary is the internal help file.
+```shell
+lisk-core --help
+lisk-core start --help
+```
 
 ## Enable HTTP API plugin
 
@@ -41,25 +46,10 @@ lisk-start
 ### BASH
 *If you are NOT using PM2 configuration file* 
 
-1. Configure API whiteList in config.json 
-
-If not present, add this in your config.json and restart the lisk-core process.
-```json
-{
-    "plugins": {
-        "httpApi": {
-            "whiteList": [
-                "127.0.0.1"
-            ]
-        }
-    }
-}
-```
-
-2. Start the lisk-core process using extra parameters
+Start the lisk-core process using extra parameters
 
 ```shell
-lisk-core start -n betanet -c ~/lisk-core/config.json --enable-http-api-plugin --http-api-plugin-port=5678`
+lisk-core start -n betanet -c ~/lisk-core/config.json --enable-http-api-plugin --http-api-plugin-port 5678 --http-api-plugin-whitelist 127.0.0.1`
 ```
 
 ## Test the localhost API 
