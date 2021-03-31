@@ -67,6 +67,9 @@ It will allow to encrypt communication between clients and the API endpoint. (Mo
 It will also allow to limit remote IP address(es) that can send API calls to the server. (Even more secure)
 If you want to provide a Public API endpoint, it will also be part of this guide.
 
+**In the guide I use `betanet-api.lisknode.io` as the domain, `100.150.200.250` as the server IP and `5678` as the HTTP API local port.
+Make sure to adapt the commands to your own specific configuration.**
+
 ## Configure UFW firewall
 
 ```shell
@@ -105,7 +108,24 @@ sudo certbot --nginx -d betanet-api.lisknode.io --email forgetit@notstupid.com -
 
 ## Configure Nginx
 
-*TODO*
+```shell
+sudo mkdir -p /etc/nginx/ssl/
+
+sudo openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096
+
+sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.original
+
+sudo curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/NGINX/api.template.nginx.conf -o /etc/nginx/nginx.conf
+
+sudo sed -i 's/##FQDN##/betanet-api.lisknode.io/g' /etc/nginx/nginx.conf
+
+sudo sed -i 's/##APIPORT##/5678/g' /etc/nginx/nginx.conf
+
+sudo systemctl restart nginx
+
+sudo systemctl enable nginx
+
+```
 
 ## Update Certificate
 
