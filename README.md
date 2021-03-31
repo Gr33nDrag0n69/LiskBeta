@@ -54,12 +54,12 @@ My experience on betanet wouldn't have been the same without your work.
 ## Snapshot
 
 * [Lisk.io](https://snapshots.lisk.io/betanet/)
-* **SOON™** [Gr33nDrag0n](https://betanet-snapshot.lisknode.io/)
+* **SOON™** [Gr33nDrag0n - betanet-snapshot.lisknode.io](https://betanet-snapshot.lisknode.io/)
 
 ## Public API Endpoints
 
-* [Lemii - lisktools.eu](https://betanet5-api.lisktools.eu/)
-* **SOON™** [Gr33nDrag0n - api.beta.lisknode.io](https://api.beta.lisknode.io/)
+* [Lemii - betanet5-api.lisktools.eu](https://betanet5-api.lisktools.eu/)
+* **SOON™** [Gr33nDrag0n - betanet-api.lisknode.io](https://betanet-api.lisknode.io/)
 
 ## Scripts
 
