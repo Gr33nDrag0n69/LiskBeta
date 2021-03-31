@@ -45,7 +45,6 @@ sudo ufw allow "123/udp"
 sudo ufw allow "25/tcp"
 
 # Lisk-Core
-sudo ufw allow "5000/tcp"
 sudo ufw allow "5001/tcp"
 
 sudo ufw --force enable
