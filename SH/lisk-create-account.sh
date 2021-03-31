@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Gr33nDrag0n v1.0.0 (2021-03-28)
+# Gr33nDrag0n v1.0.1 (2021-03-30)
 
 OnionFilename="lisk-auto-onion.json"
 ConfigFilename="lisk-auto-config.json"
@@ -40,14 +40,6 @@ cat > "$HOME/$ConfigFilename" << EOF_Config
                 "hashOnion": $HashOnion
             }
         ]
-    },
-
-    "plugins": {
-        "httpApi": {
-            "whiteList": [
-                "127.0.0.1"
-            ]
-        }
     }
 }
 EOF_Config
