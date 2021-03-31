@@ -8,7 +8,7 @@ Install Lisk-Core 3 Beta 5 on Ubuntu using binaries, PM2 & custom scripts
 - [Start Lisk](#start-lisk)
 - [Download & Execute Delegate Account Creation Script](#download--execute-delegate-account-creation-script)
 - [Copy Auto Config.json to Production Path](#copy-auto-configjson-to-production-path)
-- [Restart PM2 (Reload Lisk on production config.)](#restart-pm2-reload-lisk-on-production-config)
+- [Restart PM2 with 'Default' config](#restart-pm2-with-default-config)
 - [Fund the account](#fund-the-account)
 - [Wait for funds](#wait-for-funds)
 - [Register Delegate Name](#register-delegate-name)
@@ -73,9 +73,13 @@ sudo npm i -g pm2
 pm2 install pm2-logrotate
 pm2 set pm2-logrotate:max_size 100M
 
-# Download lisk-core configuration file for PM2
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core-first-start.pm2.json -o ~/lisk-core-first-start.pm2.json
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core.pm2.json -o ~/lisk-core.pm2.json
+# Download lisk-core configuration files for PM2
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core.firststart.pm2.json -o ~/lisk-core.firststart.pm2.json
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core.default.pm2.json -o ~/lisk-core.default.pm2.json
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core.api.pm2.json -o ~/lisk-core.api.pm2.json
+
+# Install 'FirstStart' PM2 as active configuration for lisk-start alias
+cp ~/lisk-core.firststart.pm2.json ~/lisk-core.pm2.json
 
 ```
 
@@ -83,7 +87,6 @@ curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core
 
 ```shell
 cat > ~/.bash_aliases << EOF_Alias_Config 
-alias lisk-firststart='pm2 start ~/lisk-core-first-start.pm2.json'
 alias lisk-start='pm2 start ~/lisk-core.pm2.json'
 alias lisk-stop='pm2 stop lisk-core'
 alias lisk-logs='tail -f ~/.lisk/lisk-core/logs/lisk.log'
@@ -98,7 +101,7 @@ source ~/.bashrc
 ## Start Lisk
 
 ```shell
-lisk-firststart
+lisk-start
 
 # Verify Lisk-Core Logs (Optional)
 lisk-logs
@@ -129,10 +132,11 @@ cp ~/lisk-auto-config.json ~/lisk-core/config.json
 ```
 
 
-## Restart PM2 (Reload Lisk on production config.)
+## Restart PM2 with 'Default' config
 
 ```shell
 lisk-stop
+cp ~/lisk-core.default.pm2.json ~/lisk-core.pm2.json
 lisk-start
 ```
 
