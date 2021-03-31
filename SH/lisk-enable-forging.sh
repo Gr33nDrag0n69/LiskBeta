@@ -1,28 +1,14 @@
 #!/bin/bash
 
-# Gr33nDrag0n v1.1.0 (2021-03-29)
+# Gr33nDrag0n v1.2.0 (2021-03-30)
 
 ForgingStatus=$( lisk-core forging:status )
 
 BinaryAddress=$( echo $ForgingStatus | jq '.[0] | .address' | tr -d '"' )
 
-Height=$( echo $ForgingStatus | jq '.[0] | .height' )
-if [ "$Height" = "null" ]
-then
-      Height="0"
-fi
-
-MaxHeightPreviouslyForged=$( echo $ForgingStatus | jq '.[0] | .maxHeightPreviouslyForged' )
-if [ "$MaxHeightPreviouslyForged" = "null" ]
-then
-      MaxHeightPreviouslyForged="0"
-fi
-
-MaxHeightPrevoted=$( echo $ForgingStatus | jq '.[0] | .maxHeightPrevoted' )
-if [ "$MaxHeightPrevoted" = "null" ]
-then
-      MaxHeightPrevoted="0"
-fi
+Height=$( echo $ForgingStatus | jq '.[0] | .height // 0' )
+MaxHeightPreviouslyForged=$( echo $ForgingStatus | jq '.[0] | .maxHeightPreviouslyForged // 0' )
+MaxHeightPrevoted=$( echo $ForgingStatus | jq '.[0] | .maxHeightPrevoted // 0' )
 
 echo "Command: lisk-core forging:enable $BinaryAddress $Height $MaxHeightPreviouslyForged $MaxHeightPrevoted"
 
