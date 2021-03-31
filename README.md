@@ -68,5 +68,5 @@ My experience on betanet wouldn't have been the same without your work.
 
 ## Misc. File
 
-* [Gr33nDrag0n - PM2 Configuration Example](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PM2/lisk-core.pm2.json)
+* [Gr33nDrag0n - PM2 Configuration Templates](https://github.com/Gr33nDrag0n69/LiskBeta/tree/main/PM2)
 * **SOON™** [Gr33nDrag0n - NGINX Configuration Example]()
