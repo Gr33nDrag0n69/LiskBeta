@@ -37,7 +37,7 @@ My experience on betanet wouldn't have been the same without your work.
 
 * [Gr33nDrag0n - Install Lisk-Core 3 Beta 5 on Ubuntu using binaries, PM2 & custom scripts](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/InstallLiskCore.md)
 * [Gr33nDrag0n - BASIC & ADVANCED Configuration of Lisk-Core API Endpoint](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/ConfigureAPI.md)
-* **SOON™** [Gr33nDrag0n - Use a public snapshot to quickly rebuild a node]()
+* [Gr33nDrag0n - Rebuild Blockchain From Snapshot](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/RebuildBlockchainFromSnapshot.md)
 * **SOON™** [Gr33nDrag0n - Create a public snapshot server]()
 * [Punkrock - Install Lisk BetaNet v5 using NPM & screen](https://punkrock.github.io/lisk-betanet-v5-tutorial.html)
 * [Lemii - Securing a Lisk Node with Nginx and Certbot](https://github.com/Lemii/guides/blob/master/securing-a-lisk-node-with-nginx-and-certbot.md)
