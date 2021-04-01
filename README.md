@@ -59,8 +59,8 @@ My experience on betanet wouldn't have been the same without your work.
 
 ## Public API Endpoints
 
+* [Gr33nDrag0n - betanet-api.lisknode.io](https://betanet-api.lisknode.io/)
 * [Lemii - betanet5-api.lisktools.eu](https://betanet5-api.lisktools.eu/)
-* **SOON™** [Gr33nDrag0n - betanet-api.lisknode.io](https://betanet-api.lisknode.io/)
 
 ## Scripts
 
