@@ -178,7 +178,7 @@ Account should exist & 'token -> balance' should be greater then zero.
 ```txt
 # Create Tx
 
-lisk-core transaction:create 5 0 1100000000
+lisk-core transaction:create 5 0 1500000000
 
 ? Please enter username:      ##DelegateName##
 ? Please enter passphrase:    ##AccountPassphrase##
@@ -227,11 +227,11 @@ lisk-core account:get ##AccountBinaryAddress##
 
 "balance":"148900000000" = 1489 LSK
 
-# Vote myself with 1480 LSK (Amount should be multiple of 10 * 10^8.)
+# Vote myself with 1450 LSK (Amount should be multiple of 10 * 10^8.)
 
 lisk-core transaction:create 5 1 100000000
 
-? Please enter: votes(delegateAddress, amount):        ##AccountBinaryAddress##,148000000000
+? Please enter: votes(delegateAddress, amount):        ##AccountBinaryAddress##,145000000000
 ? Want to enter another votes(delegateAddress, amount) No
 ? Please enter passphrase:                             ##AccountPassphrase##
 ? Please re-enter passphrase:                          ##AccountPassphrase##
