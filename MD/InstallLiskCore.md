@@ -115,7 +115,8 @@ lisk-core blockchain:download --url https://snapshots.lisk.io/betanet/blockchain
 lisk-core blockchain:import ~/blockchain.db.tar.gz --force
 
 # Delete downloaded file
-rm -f ~/blockchain.db.tar.gz 
+rm -f ~/blockchain.db.tar.gz
+rm -f ~/blockchain.db.tar.gz.SHA256
 
 ```
 
