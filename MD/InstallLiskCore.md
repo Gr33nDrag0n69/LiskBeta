@@ -21,6 +21,11 @@ Install Lisk-Core 3 Beta 5 on Ubuntu using binaries, PM2 & custom scripts
 ## Install Base
 
 ```shell
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get autoremove
+
 sudo apt-get -y install wget tar zip unzip ufw htop npm git curl bash jq nodejs npm
 ```
 
