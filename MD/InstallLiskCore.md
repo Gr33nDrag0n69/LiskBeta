@@ -5,6 +5,7 @@ Install Lisk-Core 3 Beta 5 on Ubuntu using binaries, PM2 & custom scripts
 - [Install Lisk-Core Using Binary Method](#install-lisk-core-using-binary-method)
 - [Install & Configure PM2](#install--configure-pm2)
 - [Create Bash Alias](#create-bash-alias)
+- [Download & Import Latest Snapshot](#download--import-latest-snapshot)
 - [Start Lisk](#start-lisk)
 - [Download & Execute Delegate Account Creation Script](#download--execute-delegate-account-creation-script)
 - [Copy Auto Config.json to Production Path](#copy-auto-configjson-to-production-path)
@@ -99,16 +100,32 @@ EOF_Alias_Config
 source ~/.bashrc
 ```
 
+## Download & Import Latest Snapshot
+
+```shell
+# Use Lisk.io
+lisk-core blockchain:download --url https://snapshots.lisk.io/betanet/blockchain.db.tar.gz --output ~/
+
+# Use LiskNode.io
+# lisk-core blockchain:download --url https://betanet-snapshot.lisknode.io/blockchain.db.tar.gz --output ~/
+
+# Validate Checksum
+
+# Import to DB
+lisk-core blockchain:import ~/blockchain.db.tar.gz --force
+
+# Delete downloaded file
+rm -f ~/blockchain.db.tar.gz 
+
+```
+
 ## Start Lisk
 
 ```shell
 lisk-start
 
-# Verify Lisk-Core Logs (Optional)
-lisk-logs
-
-# Verify PM2 Logs (Optional)
-lisk-pm2-logs
+# Wait until the blockchain is fully in sync by watching PM2 Logs
+lisk-pm2logs
 ```
 
 ## Download & Execute Delegate Account Creation Script
