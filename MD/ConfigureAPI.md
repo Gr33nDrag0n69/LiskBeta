@@ -13,7 +13,7 @@ Lisk-Core API Configuration
   - [Install Nginx & Certbot](#install-nginx--certbot)
   - [Create SSL cert.](#create-ssl-cert)
   - [Configure Nginx](#configure-nginx)
-  - [Test Remote HTTPS API](#test-remote-https-api)
+  - [Test HTTPS API](#test-https-api)
   - [Manually Update Certificate](#manually-update-certificate)
   - [Restrict HTTPS API access](#restrict-https-api-access)
 
@@ -139,9 +139,11 @@ sudo systemctl enable nginx
 
 ```
 
-## Test Remote HTTPS API
+## Test HTTPS API
 
-Using a browser from another IP, test basic get using `https://betanet-api.lisknode.io/api/node/info` in the address bar. If you can see json output in the browser the remote secure endpoint is working.
+```shell
+curl -X 'GET' 'https://betanet-api.lisknode.io/api/node/info' -H 'accept: application/json' | jq '.'
+```
 
 ## Manually Update Certificate
 
