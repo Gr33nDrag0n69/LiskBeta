@@ -100,14 +100,20 @@ Best way to test it is to ping the A record address and wait for the IP to resol
 ## Install Nginx & Certbot
 
 ```shell
-sudo apt-get -y install nginx certbot python-certbot-nginx
+sudo apt-get -y install nginx
+sudo apt-get -y install certbot
+
+# Ubuntu 18
+sudo apt-get -y install python-certbot-nginx
+# Ubuntu 20
+sudo apt-get -y install python3-certbot-nginx
 ```
 
 ## Create SSL cert.
 *Edit DomainName & Email*
 
 ```shell
-sudo certbot certonly --nginx -d betanet-api.lisknode.io --email forgetit@notstupid.com --agree-tos --force-renewal
+sudo certbot certonly --nginx -d betanet-api.lisknode.io --email forgetit@notstupid.com --agree-tos
 ```
 
 ## Configure Nginx
