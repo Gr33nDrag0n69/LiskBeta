@@ -38,9 +38,6 @@ sudo ufw allow from "100.150.200.250/32"
 # DNS
 sudo ufw allow "53/udp"
 
-# NTP (Optional)
-sudo ufw allow "123/udp"
-
 # Mail Server (Optional)
 sudo ufw allow "25/tcp"
 
