@@ -31,8 +31,6 @@ now() {
 
 ### MAIN ##############################################################################################################
 
-parse_option "$@"
-
 ### Get Blockchain Height
 
 echo -e "\\n$(now) Get Blockchain Height"
