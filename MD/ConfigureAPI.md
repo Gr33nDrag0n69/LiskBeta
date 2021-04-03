@@ -129,9 +129,9 @@ sudo rm -f /etc/nginx/sites-enabled/default
 
 sudo curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/NGINX/api.template.nginx.conf -o /etc/nginx/nginx.conf
 
-sudo sed -i 's/##FQDN##/betanet-api.lisknode.io/g' /etc/nginx/nginx.conf
+sudo sed -i 's/##API_FQDN##/betanet-api.lisknode.io/g' /etc/nginx/nginx.conf
 
-sudo sed -i 's/##APIPORT##/5678/g' /etc/nginx/nginx.conf
+sudo sed -i 's/##API_PORT##/5678/g' /etc/nginx/nginx.conf
 
 sudo systemctl restart nginx
 
@@ -159,4 +159,4 @@ sudo systemctl restart nginx
 *TODO*
 
 - Close port 80 and 443 and use allow from management ip
-- the ports 80 & 443 have to be pre-opened and re-closed everytime the certificate renew command is executed.
+- the ports 80 & 443 have to be pre-opened and re-closed every time the certificate renew command is executed.
