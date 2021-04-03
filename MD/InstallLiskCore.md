@@ -209,14 +209,15 @@ Account should exist & 'dpos -> delegate -> username' should be set.
 ## Download Forging Enable Script
 
 ```shell
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-enable-forging.sh -o ~/lisk-enable-forging.sh
-chmod 700 ~/lisk-enable-forging.sh
+curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-enable-forging.sh -o ~/lisk-enable-forging.sh && chmod 700 ~/lisk-enable-forging.sh
 ```
+
 ## Activate Forging
 
 ```shell
 lisk-forge
 ```
+
 ## Self-Vote your delegate account
 *Edit ##AccountBinaryAddress##, ##AccountPassphrase## & Vote Amount*
 
