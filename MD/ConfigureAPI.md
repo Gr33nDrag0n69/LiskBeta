@@ -117,6 +117,7 @@ sudo certbot certonly --nginx -d betanet-api.lisknode.io --email forgetit@notstu
 ```
 
 ## Configure Nginx
+*Edit API FQDN value & API Port value*
 
 ```shell
 sudo mkdir -p /etc/nginx/ssl/
