@@ -1,6 +1,6 @@
  ![##Images_README_Header##](./PNG/Header.png)
 
-Misc. stuff related to lisk-core beta network.
+Misc. stuff related to lisk-core 3 beta network.
 
 
 - [Disclaimer](#disclaimer)
@@ -16,7 +16,7 @@ Misc. stuff related to lisk-core beta network.
 
 # Disclaimer
 
-Valid for Lisk Betanet ONLY!
+Valid for Lisk-Core 3 Betanet 5 ONLY!
 
 **For most questions, take the time to read official Lisk-Core & Lisk-SDK documentation! [Links below](#documentation)**
 
