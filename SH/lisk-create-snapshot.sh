@@ -48,14 +48,10 @@ echo -e "\\n$(now) Blockchain Height: ${HEIGHT}"
 #echo -e "\\n$(now) Stop Lisk-Core & Wait 3 seconds"
 #pm2 stop lisk-core --silent && sleep 3
 
-#echo -e "\\n$(now) Get Blockchain SHA256 Hash"
-#HASH=$( lisk-core blockchain:hash )
-
 echo -e "\\n$(now) Create ${OUTPUT_GZIP_FILENAME}"
 lisk-core blockchain:export --output "${OUTPUT_DIRECTORY}"
 
 echo -e "\\n$(now) Create ${OUTPUT_GZIP_FILENAME}.SHA256"
-#echo -e "${HASH}  ${OUTPUT_GZIP_FILENAME}" > "$OUTPUT_HASH_FILEPATH"
 cd "${OUTPUT_DIRECTORY}" && sha256sum "${OUTPUT_GZIP_FILENAME}" > "$OUTPUT_HASH_FILEPATH"
 
 #echo -e "\\n$(now) Start Lisk-Core"
@@ -69,7 +65,6 @@ echo -e "\\n$(now) Create ${OUTPUT_GZIP_COPY_FILENAME}"
 cp "${OUTPUT_GZIP_FILEPATH}" "${OUTPUT_GZIP_COPY_FILEPATH}"
 
 echo -e "\\n$(now) Create ${OUTPUT_GZIP_COPY_FILENAME}.SHA256"
-#echo -e "${HASH}  ${OUTPUT_GZIP_COPY_FILENAME}" > "$OUTPUT_HASH_COPY_FILEPATH"
 cd "${OUTPUT_DIRECTORY}" && sha256sum "${OUTPUT_GZIP_COPY_FILENAME}" > "$OUTPUT_HASH_COPY_FILEPATH"
 
 echo -e "\\n$(now) Update new files permissions"
