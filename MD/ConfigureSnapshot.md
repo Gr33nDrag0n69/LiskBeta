@@ -1,3 +1,5 @@
+![##Images_README_Header##](./PNG/Header.png)
+
 Configure automated snapshot & share them using Nginx
 
 - [Configure Automated Snapshot](#configure-automated-snapshot)
@@ -26,7 +28,7 @@ sudo touch "${OutputPath}### Vote Gr33nDrag0n ###"
 sudo chown -R ##Username##:##Username## "${OutputPath}"
 
 # Download `lisk-create-snapshot.sh` script
-curl https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-create-snapshot.sh -o ~/lisk-create-snapshot.sh && chmod 700 ~/lisk-create-snapshot.sh
+curl -s https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-create-snapshot.sh -o ~/lisk-create-snapshot.sh && chmod 700 ~/lisk-create-snapshot.sh
 
 # Edit Script Configuration
 
