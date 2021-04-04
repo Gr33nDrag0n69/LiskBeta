@@ -1,4 +1,4 @@
- ![##Images_README_Header##](./PNG/Header.png)
+![##Images_README_Header##](./PNG/Header.png)
 
 Misc. stuff related to lisk-core 3 beta network.
 
