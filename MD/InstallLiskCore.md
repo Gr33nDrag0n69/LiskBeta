@@ -1,4 +1,4 @@
-![##Images_README_Header##](./PNG/Header.png)
+![##Header##](../PNG/Header.png)
 
 Install Lisk-Core 3 Beta 5 on Ubuntu using binaries, PM2 & custom scripts
 
