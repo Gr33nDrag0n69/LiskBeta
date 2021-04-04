@@ -1,4 +1,4 @@
-![##Images_README_Header##](./PNG/Header.png)
+![##Header##](../PNG/Header.png)
 
 Lisk-Core API Configuration
 
