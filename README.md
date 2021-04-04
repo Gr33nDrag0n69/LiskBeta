@@ -1,19 +1,7 @@
+ ![##Images_README_Header##](./PNG/Header.png)
+
 Misc. stuff related to lisk-core beta network.
 
-```txt
-$,  $,     ,"                   
-`"ss.$ss. .s'"                  
-.ss$$$$$$$$$$s,"                
-$$$$$$$$$$$$$`$$Ss"             
-$$$$$$$$$$$$$$o$$$       ,"     
-$$$$$$$$$$$$$$$$$$$$$s,  ,s"    
-$$$$$"$$$$$$""""$$$$$$"$$$$$,'  
-$$$$$$s""$$$$ssssss"$$$$$$$$"' 
-$$$$$'         `"""ss"$"$s""'   
-$$$$$,              `"""""$'    
-$$$$$$$s,..."                   
-$$$$$$$$$$$$$$$$$$$$$$s.        
-```
 
 - [Disclaimer](#disclaimer)
 - [Links](#links)
