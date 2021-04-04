@@ -6,7 +6,7 @@ Stop Lisk-Core
 
 Rebuild Blockchain
 ```shell
-# Download and validate latest snapshot:
+# Download snapshot files:
 
 # Lisk.io:
 lisk-core blockchain:download --url https://snapshots.lisk.io/betanet/blockchain.db.tar.gz --output ~/
