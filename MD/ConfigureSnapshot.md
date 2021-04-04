@@ -1,4 +1,4 @@
-![##Images_README_Header##](./PNG/Header.png)
+![##Header##](../PNG/Header.png)
 
 Configure automated snapshot & share them using Nginx
 
