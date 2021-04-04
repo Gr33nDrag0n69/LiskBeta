@@ -45,20 +45,21 @@ fi
 HEIGHT=$( echo $NODEINFO_JSON | jq '.height' )
 echo -e "\\n$(now) Blockchain Height: ${HEIGHT}"
 
-echo -e "\\n$(now) Stop Lisk-Core & Wait 3 seconds"
-pm2 stop lisk-core --silent && sleep 3
+#echo -e "\\n$(now) Stop Lisk-Core & Wait 3 seconds"
+#pm2 stop lisk-core --silent && sleep 3
 
-echo -e "\\n$(now) Get Blockchain SHA256 Hash"
-HASH=$( lisk-core blockchain:hash )
+#echo -e "\\n$(now) Get Blockchain SHA256 Hash"
+#HASH=$( lisk-core blockchain:hash )
 
 echo -e "\\n$(now) Create ${OUTPUT_GZIP_FILENAME}"
 lisk-core blockchain:export --output "${OUTPUT_DIRECTORY}"
 
 echo -e "\\n$(now) Create ${OUTPUT_GZIP_FILENAME}.SHA256"
-echo -e "${HASH}  ${OUTPUT_GZIP_FILENAME}" > "$OUTPUT_HASH_FILEPATH"
+#echo -e "${HASH}  ${OUTPUT_GZIP_FILENAME}" > "$OUTPUT_HASH_FILEPATH"
+cd ~/ && sha256sum "${OUTPUT_GZIP_FILENAME}" > "$OUTPUT_HASH_FILEPATH"
 
-echo -e "\\n$(now) Start Lisk-Core"
-pm2 start ~/lisk-core.pm2.json --silent
+#echo -e "\\n$(now) Start Lisk-Core"
+#pm2 start ~/lisk-core.pm2.json --silent
 
 OUTPUT_GZIP_COPY_FILENAME="blockchain-${HEIGHT}.db.tar.gz"
 OUTPUT_GZIP_COPY_FILEPATH="${OUTPUT_DIRECTORY}/${OUTPUT_GZIP_COPY_FILENAME}"
