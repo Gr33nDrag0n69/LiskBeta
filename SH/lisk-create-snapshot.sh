@@ -33,20 +33,21 @@ now() {
 
 ### Get Blockchain Height
 
-echo -e "\\n$(now) Get Blockchain Height"
-NODEINFO_JSON=$( lisk-core node:info 2> /dev/null )
+#echo -e "\\n$(now) Get Blockchain Height"
+#
+#NODEINFO_JSON=$( lisk-core node:info 2> /dev/null )
+#
+#if [ -z "${NODEINFO_JSON}" ]; then
+#    echo  -e "\\n$(now) ERROR: Node Info is invalid. Aborting..."
+#    exit 1
+#fi
 
-if [ -z "${NODEINFO_JSON}" ]; then
-    echo  -e "\\n$(now) ERROR: Node Info is invalid. Aborting..."
-    exit 1
-fi
-
-HEIGHT=$( echo $NODEINFO_JSON | jq '.height' )
-echo -e "\\n$(now) Blockchain Height: ${HEIGHT}"
+#HEIGHT=$( echo $NODEINFO_JSON | jq '.height' )
+#echo -e "\\n$(now) Blockchain Height: ${HEIGHT}"
 
 # Stop Lisk-Core
 
-pm2 stop lisk-core
+pm2 stop lisk-core --silent
 
 ### Export blockchain.db
 
@@ -80,7 +81,7 @@ echo -e "------"
 # Start Lisk-Core
 
 echo -e "\\n$(now) Start Lisk-Core"
-pm2 start ~/lisk-core.pm2.json
+pm2 start ~/lisk-core.pm2.json --silent
 
 # Make GZip Copy Files
 
