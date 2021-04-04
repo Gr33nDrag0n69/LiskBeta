@@ -55,7 +55,7 @@ echo -e "\\n$(now) Create ${OUTPUT_GZIP_FILENAME}"
 lisk-core blockchain:export --output "${OUTPUT_DIRECTORY}"
 
 echo -e "\\n$(now) Create ${OUTPUT_GZIP_FILENAME}.SHA256"
-echo -e "${HASH}  ${OUTPUT_GZIP_FILENAME}\n" > "$OUTPUT_HASH_FILEPATH"
+echo -e "${HASH}  ${OUTPUT_GZIP_FILENAME}" > "$OUTPUT_HASH_FILEPATH"
 
 echo -e "\\n$(now) Start Lisk-Core"
 pm2 start ~/lisk-core.pm2.json --silent
@@ -65,10 +65,10 @@ OUTPUT_GZIP_COPY_FILEPATH="${OUTPUT_DIRECTORY}/${OUTPUT_GZIP_COPY_FILENAME}"
 OUTPUT_HASH_COPY_FILEPATH="${OUTPUT_DIRECTORY}/${OUTPUT_GZIP_COPY_FILENAME}.SHA256"
 
 echo -e "\\n$(now) Create ${OUTPUT_GZIP_COPY_FILENAME}"
-cp "#{OUTPUT_GZIP_FILEPATH}" "${OUTPUT_GZIP_COPY_FILEPATH}"
+cp "${OUTPUT_GZIP_FILEPATH}" "${OUTPUT_GZIP_COPY_FILEPATH}"
 
 echo -e "\\n$(now) Create ${OUTPUT_GZIP_COPY_FILENAME}.SHA256"
-echo -e "${HASH}  ${OUTPUT_GZIP_COPY_FILENAME}\n" > "$OUTPUT_HASH_COPY_FILEPATH"
+echo -e "${HASH}  ${OUTPUT_GZIP_COPY_FILENAME}" > "$OUTPUT_HASH_COPY_FILEPATH"
 
 echo -e "\\n$(now) Update new files permissions"
 chmod 644 "$OUTPUT_GZIP_FILEPATH"
