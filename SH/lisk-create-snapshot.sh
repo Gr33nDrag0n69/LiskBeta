@@ -45,8 +45,8 @@ fi
 HEIGHT=$( echo $NODEINFO_JSON | jq '.height' )
 echo -e "\\n$(now) Blockchain Height: ${HEIGHT}"
 
-echo -e "\\n$(now) Stop Lisk-Core"
-pm2 stop lisk-core --silent
+echo -e "\\n$(now) Stop Lisk-Core & Wait 3 seconds"
+pm2 stop lisk-core --silent && sleep 3
 
 echo -e "\\n$(now) Get Blockchain SHA256 Hash"
 HASH=$( lisk-core blockchain:hash )
