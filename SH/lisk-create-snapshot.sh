@@ -35,7 +35,7 @@ now() {
 
 echo -e "\\n$(now) Get Blockchain Height"
 
-NODEINFO_JSON=$( lisk-core node:info 2> /dev/null )
+NODEINFO_JSON=$( lisk-core node:info )
 
 if [ -z "${NODEINFO_JSON}" ]; then
     echo  -e "\\n$(now) ERROR: Node Info is invalid. Aborting..."
