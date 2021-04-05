@@ -42,7 +42,8 @@ vi ~/lisk-create-snapshot.sh
 
 crontab -e
 #----------------------------------------
-0 */3 * * * /bin/bash ~/lisk-create-snapshot.sh > ~/lisk-create-snapshot.log 2>&1
+#0 */3 * * * ~/lisk-create-snapshot.sh >> ~/lisk-create-snapshot.full.log 2>&1
+0 */3 * * * ~/lisk-create-snapshot.sh > ~/lisk-create-snapshot.lastrun.log 2>&1
 #----------------------------------------
 
 ```
