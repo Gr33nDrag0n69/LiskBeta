@@ -7,7 +7,7 @@ Install Lisk-Core 3 Beta 5 on Ubuntu using binaries, PM2 & custom scripts
 - [Install Lisk-Core Using Binary Method](#install-lisk-core-using-binary-method)
 - [Install & Configure PM2](#install--configure-pm2)
 - [Create Bash Alias](#create-bash-alias)
-- [Download & Import Latest Snapshot](#download--import-latest-snapshot)
+- [Download & Execute Rebuild From Snapshot Script](#download--execute-rebuild-from-snapshot-script)
 - [Start Lisk](#start-lisk)
 - [Download & Execute Delegate Account Creation Script](#download--execute-delegate-account-creation-script)
 - [Copy Auto Config.json to Production Path](#copy-auto-configjson-to-production-path)
@@ -97,29 +97,18 @@ alias lisk-logs='tail -f ~/.lisk/lisk-core/logs/lisk.log'
 alias lisk-pm2logs='pm2 logs'
 alias lisk-lastblocks='tail -n 1000 ~/.lisk/lisk-core/logs/lisk.log | grep "Forged new block"'
 alias lisk-forge='~/lisk-enable-forging.sh'
+alias lisk-rebuild='~/lisk-rebuild.sh'
 EOF_Alias_Config
 
 source ~/.bashrc
 ```
 
-## Download & Import Latest Snapshot
+## Download & Execute Rebuild From Snapshot Script
 
 ```shell
-# Use Lisk.io
-lisk-core blockchain:download --url https://snapshots.lisk.io/betanet/blockchain.db.tar.gz --output ~/
-
-# Use LiskNode.io
-# lisk-core blockchain:download --url https://betanet-snapshot.lisknode.io/blockchain.db.tar.gz --output ~/
-
-# Validate Checksum
-
-# Import to DB
-lisk-core blockchain:import ~/blockchain.db.tar.gz --force
-
-# Delete downloaded file
-rm -f ~/blockchain.db.tar.gz
-rm -f ~/blockchain.db.tar.gz.SHA256
-
+curl -s https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-rebuild.sh -o ~/lisk-rebuild.sh
+chmod 700 ~/lisk-rebuild.sh
+~/lisk-rebuild.sh
 ```
 
 ## Start Lisk
