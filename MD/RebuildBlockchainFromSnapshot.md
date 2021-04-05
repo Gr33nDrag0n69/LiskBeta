@@ -4,6 +4,8 @@
 
 ## Automated Script
 
+**Requirement**: Manage lisk-core process with PM2. See [this guide](https://github.com/Gr33nDrag0n69/LiskBeta/blob/main/MD/InstallLiskCore.md) for more information.
+
 Install
 ```shell
 curl -s https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-rebuild.sh -o ~/lisk-rebuild.sh && chmod 700 ~/lisk-rebuild.sh
