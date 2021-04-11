@@ -24,7 +24,7 @@ $Config = @{
     PublicNode = @(
         'https://betanet-api.lisknode.io/',
         'https://betanet5.lisk.io/',
-        'https://beta.lisk.n0d3.io/'
+        'https://betanet5-api.lisktools.eu/'
     )
 }
 
