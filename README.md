@@ -12,7 +12,9 @@ Misc. stuff related to lisk-core 3 beta network.
   - [Explorer](#explorer)
   - [Snapshot](#snapshot)
   - [Public API Endpoints](#public-api-endpoints)
-  - [Bash Scripts](#bash-scripts)
+  - [Scripts](#scripts)
+    - [Bash / Server](#bash--server)
+    - [PowerShell / HTTPS API](#powershell--https-api)
   - [Misc. File](#misc-file)
 
 # Disclaimer
@@ -64,18 +66,25 @@ My experience on betanet wouldn't have been the same without your work.
 
 * [Lisk.io](https://snapshots.lisk.io/betanet/)
 * [LiskNode.io](https://betanet-snapshot.lisknode.io/)
+* [StellarDynamic - LiskApi.io](https://betanet-snapshot.liskapi.io/)
 
 ## Public API Endpoints
 
 * [LiskNode.io](https://betanet-api.lisknode.io/)
 * [Lemii - LiskTools.eu](https://betanet5-api.lisktools.eu/)
 
-## Bash Scripts
+## Scripts
+
+### Bash / Server
 
 * [Create Delegate Account](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-create-account.sh)
 * [Enable Delegate Forging](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-enable-forging.sh)
 * [Create Snapshot](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-create-snapshot.sh)
 * [Rebuild From Snapshot](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/SH/lisk-rebuild.sh)
+
+### PowerShell / HTTPS API
+
+* [Test Lisk-Core API Endpoints](https://raw.githubusercontent.com/Gr33nDrag0n69/LiskBeta/main/PS1/Test-LiskCoreAPI.ps1)
 
 ## Misc. File
 
